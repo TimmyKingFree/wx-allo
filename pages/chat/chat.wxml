@@ -1,0 +1,17 @@
+<!--chat wxml  -->
+<view class="page-container">
+  <scroll-view class="chat-container" scroll-y scroll-top="{{scrollTop}}">
+    <block wx:for="{{message}}">
+      <view class="msg-box {{item.boxType}}">
+        <view class="{{item.msgTextType}} msg-text">{{item.msgText}}</view>
+        <view class="{{item.msgStatus}} msg-status {{item.loading}}"></view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="send-msg">
+    <input bindinput="getInputValue" value="{{inputValue}}"/>
+    <view class="send-btn" bindtap='submitMessage'>
+      <icon type="search" size="16"/>
+    </view>
+  </view>
+</view>
